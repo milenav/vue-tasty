@@ -9,8 +9,8 @@
         <mdb-nav-item href="#"><i class="fas fa-plus-circle"></i> Create</mdb-nav-item>
         <mdb-nav-item href="#"><i class="fas fa-smile"></i> Profile</mdb-nav-item>
         <mdb-nav-item href="/register"><i class="fas fa-user"></i> Register</mdb-nav-item>
-        <mdb-nav-item href="/login"><i class="fas fa-user"></i> Login</mdb-nav-item>
-        <mdb-nav-item class="disabled" href="#">Logout</mdb-nav-item>
+        <mdb-nav-item href="/login"><i class="fas fa-sign-in-alt"></i> Login</mdb-nav-item>
+        <mdb-nav-item class="disabled" href="#"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
         <!-- <mdb-dropdown tag="li" class="nav-item">
           <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>Dropdown</mdb-dropdown-toggle>
           <mdb-dropdown-menu>
