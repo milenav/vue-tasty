@@ -45,7 +45,7 @@
     </mdb-container>
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid>
-        Copyright &copy; 2019 <a href="https://github.com/milenav"> Milena Valcheva </a>
+        Copyright &copy; 2019 <a href="https://github.com/milenav"> Milena Valcheva</a>
       </mdb-container>
     </div>
   </mdb-footer>
