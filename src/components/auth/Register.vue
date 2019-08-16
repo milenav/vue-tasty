@@ -1,80 +1,70 @@
 <template>
-  <mdb-container class="d-flex justify-content-center">
+ <mdb-container>
     <section class="my-5">
-      <mdb-row>
-        <mdb-col lg="12" class="col-md-6">
-            <form>
-          <mdb-input
-            small="Your password must be 8-20 characters long"
-            label="Username"
-          />
+      <mdb-row class="d-flex justify-content-center">
+        <mdb-col class="col-md-6">
+          <form @submit.prevent="onRegisterClick">
+            <mdb-input v-model="$v.username.$model" label="Username" />
+            <p class="small text-danger" v-if="$v.username.$error">Your password must be 8-20 characters long</p>
 
-          <mdb-input
-            small="Your password must be 8-20 characters long."
-            label="Email"
-          />
+            <mdb-input v-model="$v.email.$model" label="Email" />
+            <p class="small text-danger" v-if="$v.email.$error">Your password must be 8-20 characters long</p>
 
-          <mdb-input
-            small="Your password must be 8-20 characters long, contain letters and numbers"
-            label="Password"
-          />
+            <mdb-input v-model="$v.password.$model" label="Password" />
+            <p class="small text-danger" v-if="$v.password.$error">Your password must be 8-20 characters long</p>
 
-          <mdb-btn color="pink" type="submit">Register</mdb-btn>
-
-          <!-- <div class="form-group">
-    <label for="exampleHelpText">Username</label>
-    <input type="text" id="exampleHelpText" class="form-control" placeholder="Default input">
-    <small id="passwordHelpBlock" class="form-text text-muted">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
-      special characters,
-      or emoji.
-    </small>
-    <label for="exampleHelpText">Email</label>
-    <input type="email" id="exampleHelpText" class="form-control" placeholder="Default input">
-    <small id="passwordHelpBlock" class="form-text text-muted">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
-      special characters,
-      or emoji.
-    </small>
-    <label for="exampleHelpText">Password</label>
-    <input type="password" id="exampleHelpText" class="form-control" placeholder="Default input">
-    <small id="passwordHelpBlock" class="form-text text-muted">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
-      special characters,
-      or emoji.
-          </small>-->
-            </form>
+            <mdb-btn color="pink" type="submit" :disabled="$v.$error">Register</mdb-btn>
+          </form>
         </mdb-col>
       </mdb-row>
     </section>
-  </mdb-container>
+ </mdb-container>
 </template>    
 
 <script>
-import {
-  mdbContainer,
-  mdbRow,
-  mdbCol,
-  mdbBtn,
-  mdbIcon,
-  mdbInput,
-  mdbTextarea,
-  mdbCard,
-  mdbCardBody
-} from "mdbvue";
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
+import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
 export default {
-  components: {
-    mdbContainer,
-    mdbRow,
-    mdbCol,
-    mdbBtn,
-    mdbIcon,
-    mdbInput,
-    mdbTextarea,
-    mdbCard,
-    mdbCardBody
-  }
+    data() {
+        return {
+            username: '',
+            email: '',
+            password: ''
+        }
+    },
+    validations: {
+        username: {
+            required,
+            minLength: minLength(4),
+            maxLength: maxLength(20)
+        },
+        email: {
+            required,
+            email
+        },
+        password: {
+            required,
+            minLength: minLength(6),
+            maxLength: maxLength(20)
+        }
+    },
+    methods: {
+        onRegisterClick() {
+            console.log('registered')
+        }
+    },
+    components: {
+        mdbContainer,
+        mdbRow,
+        mdbCol,
+        mdbBtn,
+        mdbIcon,
+        mdbInput,
+        mdbTextarea,
+        mdbCard,
+        mdbCardBody
+    }
 };
 </script>
 

@@ -1,20 +1,21 @@
 <template>
-  <mdb-container class="d-flex justify-content-center">
+ <mdb-container>
     <section class="my-5">
-      <mdb-row>
-        <mdb-col lg="12" class="col-md-6">
-          <form>
-            <mdb-input small="Your password must be 8-20 characters long" label="Username" />
-            <mdb-input
-              small="Your password must be 8-20 characters long, contain letters and numbers"
-              label="Password"
-            />
-            <mdb-btn color="pink" type="submit">Register</mdb-btn>
+      <mdb-row class="d-flex justify-content-center">
+        <mdb-col class="col-md-6">
+          <form @submit.prevent="onRegisterClick">
+            <mdb-input label="Username" />
+            <p class="small text-danger">Your password must be 8-20 characters long</p>
+
+            <mdb-input label="Password" />
+            <p class="small text-danger">Your password must be 8-20 characters long</p>
+
+            <mdb-btn color="pink" type="submit">Login</mdb-btn>
           </form>
         </mdb-col>
       </mdb-row>
     </section>
-  </mdb-container>
+ </mdb-container>
 </template>    
 
 <script>
