@@ -4,7 +4,8 @@
       <h2 class="h1-responsive font-weight-bold my-5">Our best projects</h2>
       <p class="grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit est laborum.</p>
       <mdb-row class="text-center">
-        <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">
+
+        <mdb-col lg="4" md="12" class="mb-lg-0 mb-4" v-for="restaurant in restaurants" :key="restaurant._id">
           <mdb-view class="overlay rounded z-depth-1">
             <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="sample photo" class="img-fluid"/>
             <a>
@@ -12,12 +13,13 @@
             </a>
           </mdb-view>
           <mdb-card-body class="pb-0">
-            <h4 class="font-weight-bold my-3">Title of the news</h4>
+            <h4 class="font-weight-bold my-3">{{responsive.title}}Title of the news</h4>
             <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
             <mdb-btn color="indigo" size="sm"><mdb-icon icon="clone" class="left"/> View project</mdb-btn>
           </mdb-card-body>
         </mdb-col>
-        <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">
+
+        <!-- <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">
           <mdb-view class="overlay rounded z-depth-1">
             <img src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" alt="sample photo" class="img-fluid"/>
             <a>
@@ -30,6 +32,7 @@
             <mdb-btn color="indigo" size="sm"><mdb-icon icon="clone" class="left"/> View project</mdb-btn>
           </mdb-card-body>
         </mdb-col>
+
         <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">
           <mdb-view class="overlay rounded z-depth-1">
             <img src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" alt="sample photo" class="img-fluid"/>
@@ -42,7 +45,8 @@
             <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
             <mdb-btn color="indigo" size="sm"><mdb-icon icon="clone" class="left"/> View project</mdb-btn>
           </mdb-card-body>
-        </mdb-col>
+        </mdb-col> -->
+
       </mdb-row>
     </section>
   </mdb-container>
