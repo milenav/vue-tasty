@@ -32,9 +32,9 @@ export const authenticate = {
                  authtoken: data._kmd.authtoken
              }));
         },
-        // created() {
-        //     this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
-        // }
+         created() {
+             this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
+         }
     }
 }
 // import config from '@/config/config'
