@@ -22,8 +22,7 @@
 </template>    
 
 <script>
-import config from '@/config/config'
-
+import { registerUser } from '@/services/authService'
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
@@ -35,6 +34,7 @@ export default {
             password: ''
         }
     },
+    mixins: [registerUser],
     validations: {
         username: {
             required,
@@ -53,13 +53,8 @@ export default {
     },
     methods: {
         onRegisterClick() {
-            const authString = btoa(`${config.appKey}:${config.appSecret}`);
-
-            this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
-            this.$http.post(`/user/${config.appKey}`, {
-                username: this.username,
-                password: this.password
-             }).then(console.log)
+            this.register(this.username, this.password)
+            .then(res => this.$router.push('/'));
         }
     },
     components: {
