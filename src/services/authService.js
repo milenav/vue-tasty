@@ -5,6 +5,14 @@ const loginUser = user => {
     localStorage.setItem('authtoken', user.authtoken);
 }
 
+export const authServ = {
+    computed: {
+        isAuth() {
+            return localStorage.getItem('authtoken') !== null;
+        }
+    }
+}
+
 export const registerUser = {
     methods: {
         register(username, password) {
