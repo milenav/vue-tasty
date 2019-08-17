@@ -23,7 +23,7 @@
 
 <script>
 import config from '@/config/config'
-import axios from 'axios'
+
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
@@ -55,20 +55,11 @@ export default {
         onRegisterClick() {
             const authString = btoa(`${config.appKey}:${config.appSecret}`);
 
-            axios({
-                method: 'post',
-                url: `https://baas.kinvey.com/user/${config.appKey}`, 
-                data: {
-                    username: this.username,
-                    password: this.password
-                },
-                headers: {
-                    'Authorization': `Basic ${authString}`,
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => {
-                console.log(res)
-            })
+            this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
+            this.$http.post(`/user/${config.appKey}`, {
+                username: this.username,
+                password: this.password
+             }).then(console.log)
         }
     },
     components: {
