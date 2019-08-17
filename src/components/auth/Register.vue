@@ -4,13 +4,13 @@
       <mdb-row class="d-flex justify-content-center">
         <mdb-col class="col-md-6">
           <form @submit.prevent="onRegisterClick">
-            <mdb-input v-model="$v.username.$model" label="Username" />
+            <mdb-input type="text" v-model="$v.username.$model" label="Username" />
             <p class="small text-danger" v-if="$v.username.$error">Your username must be 4-20 characters long!</p>
 
-            <mdb-input v-model="$v.email.$model" label="Email" />
+            <mdb-input type="email" v-model="$v.email.$model" label="Email" />
             <p class="small text-danger" v-if="$v.email.$error">Your email is not valid!</p>
 
-            <mdb-input v-model="$v.password.$model" label="Password" />
+            <mdb-input type="password" v-model="$v.password.$model" label="Password" />
             <p class="small text-danger" v-if="$v.password.$error">Your password must be 6-20 characters long!</p>
 
             <mdb-btn color="pink" type="submit" :disabled="$v.$error">Register</mdb-btn>
