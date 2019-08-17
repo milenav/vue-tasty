@@ -46,7 +46,10 @@ export default {
   methods: {
     onLoginClick() {
       this.login(this.username, this.password)
-      .then(res => this.$router.push('/'));
+      .then(user => {
+        this.$root.$emit('sign-in', user.authtoken)
+        this.$router.push('/')
+        });
     }
   },
   components: {

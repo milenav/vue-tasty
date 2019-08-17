@@ -5,13 +5,23 @@ const authString = btoa(`${config.appKey}:${config.appSecret}`);
 const loginUser = user => {
     localStorage.setItem('username', user.username);
     localStorage.setItem('authtoken', user.authtoken);
+
+    return user;
 }
 
 export const authServ = {
+    data() {
+        return {
+            authtoken: localStorage.getItem('authtoken')  
+        }
+    },
     computed: {
         isAuth() {
-            return localStorage.getItem('authtoken') !== null;
+            return this.authtoken !== null;
         }
+    },
+    created() {
+        this.$root.$on('sign-in', authtoken => this.authtoken = authtoken)
     }
 }
 
