@@ -15,14 +15,6 @@
           <mdb-nav-item href="/register"><i class="fas fa-user"></i> Register</mdb-nav-item>
           <mdb-nav-item href="/login"><i class="fas fa-sign-in-alt"></i> Login</mdb-nav-item>
         </template>
-        <!-- <mdb-dropdown tag="li" class="nav-item">
-          <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>Dropdown</mdb-dropdown-toggle>
-          <mdb-dropdown-menu>
-            <mdb-dropdown-item>Action</mdb-dropdown-item>
-            <mdb-dropdown-item>Another action</mdb-dropdown-item>
-            <mdb-dropdown-item>Something else here</mdb-dropdown-item>
-          </mdb-dropdown-menu>
-        </mdb-dropdown> -->
       </mdb-navbar-nav>
     </mdb-navbar-toggler>
   </mdb-navbar>

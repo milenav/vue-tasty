@@ -22,7 +22,7 @@
 </template>    
 
 <script>
-import { registerUser } from '@/services/authService'
+import { authenticate } from '@/services/authService'
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
@@ -34,7 +34,7 @@ export default {
             password: ''
         }
     },
-    mixins: [registerUser],
+    mixins: [authenticate],
     validations: {
         username: {
             required,

@@ -3,11 +3,11 @@
     <section class="my-5">
       <mdb-row class="d-flex justify-content-center">
         <mdb-col class="col-md-6">
-          <form @submit.prevent="onRegisterClick">
-            <mdb-input label="Username" />
+          <form @submit.prevent="onLoginClick">
+            <mdb-input v-model="username" type="text" label="Username" />
             <p class="small text-danger">Your username is not valid!</p>
 
-            <mdb-input label="Password" />
+            <mdb-input v-model="password" type="password" label="Password" />
             <p class="small text-danger">Your password is not valid!</p>
 
             <mdb-btn color="pink" type="submit">Login</mdb-btn>
@@ -19,9 +19,22 @@
 </template>    
 
 <script>
+import { authenticate } from '@/services/authService'
 import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
 export default {
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  mixins: [authenticate],
+  methods: {
+    onLoginClick() {
+      this.loginUser(this.username, this.password)
+    }
+  },
   components: {
     mdbContainer,
     mdbRow,
