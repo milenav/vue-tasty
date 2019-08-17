@@ -49,20 +49,22 @@
 </template>
 
 <script>
+import { restaurantService } from '@/services/restaurantService'
 import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, mdbBtn, mdbIcon } from 'mdbvue';
 
 export default {
-    components: {
-      mdbContainer,
-      mdbRow,
-      mdbCol,
-      mdbView,
-      mdbMask,
-      mdbCard,
-      mdbCardBody,
-      mdbBtn,
-      mdbIcon
-    }
+  mixins: [restaurantService],
+  components: {
+    mdbContainer,
+    mdbRow,
+    mdbCol,
+    mdbView,
+    mdbMask,
+    mdbCard,
+    mdbCardBody,
+    mdbBtn,
+    mdbIcon
+  }
 }
 </script>
 

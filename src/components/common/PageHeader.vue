@@ -2,6 +2,7 @@
   <mdb-navbar expand="large" dark color="indigo" class="mt-2" animated animation="2">
     <mdb-navbar-brand href="/">
 <img src="https://i1.wp.com/www.equallyours.org.uk/wp-content/uploads/2012/04/edf-logo.png?fit=50%2C50&ssl=1" class="img-responsive" alt="Responsive image">
+    Tasty
     </mdb-navbar-brand>
     <mdb-navbar-toggler>
       <mdb-navbar-nav right>
