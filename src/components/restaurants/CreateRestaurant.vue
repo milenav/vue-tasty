@@ -38,7 +38,6 @@ export default {
         methods: {
         onCreateClick() {
             this.createRestaurant(this.restaurant)
-            // console.log(JSON.stringify(this.restaurant))
              .then(res => this.$router.push('/'));
         }
     },

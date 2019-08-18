@@ -11,17 +11,20 @@ export const restaurantService = {
         }
     },
     methods: {
-        getAllRestaurants() {
-            this.$http.defaults.headers['Authorization'] = `Kinvey ${getAuthToken()}`
+        getAllRestaurants() {        
             return this.$http.get(`appdata/${config.appKey}/restaurants`)
              .then(({data}) => this.restaurants = data)
         },
+        detailsRestaurant() {       
+            return this.$http.get(`appdata/${config.appKey}/restaurants/restaurant_id`)
+             //.then(({data}) => this.restaurants = data)
+             .then(({data}) => console.log(data))
+        },
         createRestaurant(image, title, description) {
-            this.$http.defaults.headers['Authorization'] = `Kinvey ${getAuthToken()}`
             return this.$http.post(`appdata/${config.appKey}/restaurants`, image, title, description)
-            // .then(({data}) => this.restaurants = data)
-            // register(username, password) {
-            //     return this.authenticate(`/user/${config.appKey}`, username, password);
         }
+    },
+    created() {
+        this.$http.defaults.headers['Authorization'] = `Kinvey ${getAuthToken()}`
     }
 }
