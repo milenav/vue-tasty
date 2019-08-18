@@ -10,7 +10,7 @@
             <mdb-input v-model="$v.password.$model" type="password" label="Password" />
             <p class="small text-danger" v-if="$v.password.$error">Your password is not valid!</p>
 
-            <mdb-btn color="pink" type="submit">Login</mdb-btn>
+            <mdb-btn color="pink" type="submit" :disabled="$v.$error">Login</mdb-btn>
           </form>
         </mdb-col>
       </mdb-row>

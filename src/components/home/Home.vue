@@ -17,6 +17,7 @@
             <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
             <mdb-btn color="indigo" size="sm"><mdb-icon icon="clone" class="left"/> View project</mdb-btn>
           </mdb-card-body>
+          
         </mdb-col>
 
         <!-- <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">

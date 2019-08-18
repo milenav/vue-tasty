@@ -10,7 +10,7 @@
         <template v-if="isAuth">
           <mdb-nav-item href="#"><i class="fas fa-plus-circle"></i> Create</mdb-nav-item>
           <mdb-nav-item href="#"><i class="fas fa-smile"></i> Profile</mdb-nav-item>
-          <mdb-nav-item class="disabled" href="#"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
+          <mdb-nav-item @click="onLogout" href="/login"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
         </template>
         <template v-else>
           <mdb-nav-item href="/register"><i class="fas fa-user"></i> Register</mdb-nav-item>
@@ -25,19 +25,24 @@
 import { mdbDropdown, mdbDropdownToggle, mdbDropdownMenu, mdbDropdownItem, mdbContainer, mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem, mdbIcon } from 'mdbvue';
 
 export default {
-    components: {
-      mdbNavbar,
-      mdbNavbarBrand,
-      mdbNavbarToggler,
-      mdbNavbarNav,
-      mdbNavItem,
-      mdbContainer,
-      mdbDropdown,
-      mdbDropdownToggle,
-      mdbDropdownMenu,
-      mdbDropdownItem,
-      mdbIcon
-    }   
+  components: {
+    mdbNavbar,
+    mdbNavbarBrand,
+    mdbNavbarToggler,
+    mdbNavbarNav,
+    mdbNavItem,
+    mdbContainer,
+    mdbDropdown,
+    mdbDropdownToggle,
+    mdbDropdownMenu,
+    mdbDropdownItem,
+    mdbIcon
+  },
+  methods: {
+    onLogout() {
+      return localStorage.clear()
+    }
+  }
 }
 </script>
 
