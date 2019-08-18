@@ -7,17 +7,16 @@
 
         <mdb-col lg="4" md="12" class="mb-lg-0 mb-4" v-for="restaurant in restaurants" :key="restaurant._id">
           <mdb-view class="overlay rounded z-depth-1">
-            <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="sample photo" class="img-fluid"/>
+            <img :src="restaurant.image" alt="sample photo" class="img-fluid"/>
             <a>
               <mdb-mask waves overlay="white-slight"/>
             </a>
           </mdb-view>
           <mdb-card-body class="pb-0">
-            <h4 class="font-weight-bold my-3">{{responsive.title}}Title of the news</h4>
-            <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
+            <h4 class="font-weight-bold my-3">{{restaurant.title}}</h4>
+            <p class="grey-text">{{restaurant.description}}</p>
             <mdb-btn color="indigo" size="sm"><mdb-icon icon="clone" class="left"/> View project</mdb-btn>
           </mdb-card-body>
-          
         </mdb-col>
 
         <!-- <mdb-col lg="4" md="12" class="mb-lg-0 mb-4">
@@ -58,7 +57,15 @@ import { restaurantService } from '@/services/restaurantService'
 import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, mdbBtn, mdbIcon } from 'mdbvue';
 
 export default {
+  data() {
+    return {
+      restaurants: []
+    }
+  },
   mixins: [restaurantService],
+  created() {
+    this.getAllRestaurants()
+  },
   components: {
     mdbContainer,
     mdbRow,

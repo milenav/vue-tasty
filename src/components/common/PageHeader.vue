@@ -8,7 +8,7 @@
       <mdb-navbar-nav right>
         <mdb-nav-item href="/" active><i class="fas fa-home"></i> Home</mdb-nav-item>
         <template v-if="isAuth">
-          <mdb-nav-item href="#"><i class="fas fa-plus-circle"></i> Create</mdb-nav-item>
+          <mdb-nav-item href="/restaurant/create"><i class="fas fa-plus-circle"></i> Create</mdb-nav-item>
           <mdb-nav-item href="#"><i class="fas fa-smile"></i> Profile</mdb-nav-item>
           <mdb-nav-item @click="onLogout" href="/login"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
         </template>
