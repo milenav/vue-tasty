@@ -40,7 +40,8 @@ export default {
   },
   methods: {
     onLogout() {
-      return localStorage.clear()
+      this.logout(localStorage.clear())
+      .then(res => this.$router.push('/login'));
     }
   }
 }

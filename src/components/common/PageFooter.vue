@@ -20,12 +20,12 @@
         </mdb-col>
       </mdb-row>
       <hr class="rgba-white-light" style="margin: '0 15%'" />
-      <mdb-row class="d-flex text-center justify-content-center mb-md-0 mb-4">
+      <mdb-row class="d-flex text-center justify-content-center mb-md-0 mb-2">
         <mdb-col md="8" sm="12" class="mt-5">
           <p style="lineHeight: '1.7rem'">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </mdb-col>
-      </mdb-row>
-      <hr class="clearfix d-md-none rgba-white-light" style="margin: '10% 15% 5%'" />
+      </mdb-row> 
+       <hr class="clearfix d-md-none rgba-white-light" style="margin: '10% 15% 5%'" /> 
       <mdb-row class="pb-3">
         <mdb-col md="12">
           <div class="mb-5 flex-center">

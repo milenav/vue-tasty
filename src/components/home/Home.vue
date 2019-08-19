@@ -15,9 +15,9 @@
           <mdb-card-body class="pb-0">
             <h6 class="font-weight-bold my-3"><mdb-icon icon="utensils" class="left"/> {{restaurant.title}}</h6>
             <p class="grey-text">{{restaurant.description.slice(0,17)}} ...</p>
-            <router-link :to="{name: 'detailsRestaurant', params: {id: restaurant._id}}">
+            <router-link :to="{name: 'detailsRestaurant', params: {id: restaurant._id}}"> 
             <mdb-btn class="mb-5" color="indigo" size="sm"><mdb-icon icon="utensils" class="left"/> View</mdb-btn>
-          </router-link>
+          </router-link> 
           </mdb-card-body>
         </mdb-col>
       </mdb-row>
@@ -32,15 +32,11 @@ import { restaurantService } from '@/services/restaurantService'
 import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, mdbBtn, mdbIcon } from 'mdbvue';
 
 export default {
-  data() {
-    return {
-      restaurants: []
-    }
-  },
   mixins: [restaurantService],
   created() {
     this.getAllRestaurants()
   },
+
   components: {
     mdbContainer,
     mdbRow,

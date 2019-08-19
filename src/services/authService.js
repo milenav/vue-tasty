@@ -33,6 +33,9 @@ export const authenticate = {
          login(username, password) {
              return this.authenticate(`/user/${config.appKey}/login`, username, password);
          },
+         logout(username, authtoken) {
+            return this.authenticate(`/user/${config.appKey}/_logout`, username, authtoken);
+         },
         authenticate(url, username, password) {
             return this.$http.post(url, {
                 username,
