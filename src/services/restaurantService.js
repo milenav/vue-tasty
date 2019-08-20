@@ -22,6 +22,9 @@ export const restaurantService = {
         },
         createRestaurant(image, title, description) {
             return this.$http.post(`appdata/${config.appKey}/restaurants`, image, title, description)
+        },
+        editRestaurant(restaurant_id, image, title, description) {
+            return this.$http.put(`appdata/${config.appKey}/restaurants/${restaurant_id}`, image, title, description)
         }
     },
     created() {

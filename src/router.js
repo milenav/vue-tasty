@@ -6,6 +6,7 @@ import Register from '@/components/auth/Register'
 import Login from '@/components/auth/Login'
 import DetailsRestaurant from '@/components/restaurants/DetailsRestaurant'
 import CreateRestaurant from '@/components/restaurants/CreateRestaurant'
+import EditRestaurant from '@/components/restaurants/EditRestaurant'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/restaurants/:id',
       name: 'detailsRestaurant',
       component: DetailsRestaurant
+    },
+    {
+      path: '/restaurant/edit/:id',
+      name: 'editRestaurant',
+      component: EditRestaurant
     },
   ]
 })

@@ -1,20 +1,20 @@
 <template>
   <mdb-navbar expand="large" dark color="indigo" class="mt-2" animated animation="2">
-    <mdb-navbar-brand href="/">
+    <router-link :to="{ name : 'Home'}">
 <img src="https://i1.wp.com/www.equallyours.org.uk/wp-content/uploads/2012/04/edf-logo.png?fit=50%2C50&ssl=1" class="img-responsive" alt="Responsive image">
     Tasty
-    </mdb-navbar-brand>
+    </router-link>
     <mdb-navbar-toggler>
       <mdb-navbar-nav right>
-        <mdb-nav-item href="/" active><i class="fas fa-home"></i> Home</mdb-nav-item>
+        <router-link :to="{ name : 'home'}" active><i class="fas fa-home"></i> Home</router-link>
         <template v-if="isAuth">
-          <mdb-nav-item href="/restaurant/create"><i class="fas fa-plus-circle"></i> Create</mdb-nav-item>
-          <mdb-nav-item href="#"><i class="fas fa-smile"></i> Profile</mdb-nav-item>
-          <mdb-nav-item @click="onLogout" href="/"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
+          <router-link :to="{ name : 'createRestaurant'}"><i class="fas fa-plus-circle"></i> Create</router-link>
+          <router-link :to="{ name : ''}"><i class="fas fa-smile"></i> Profile</router-link>
+          <router-link @click="onLogout" to="{ name : ''}"><i class="fas fa-sign-out-alt"></i> Logout</router-link>
         </template>
         <template v-else>
-          <mdb-nav-item href="/register"><i class="fas fa-user"></i> Register</mdb-nav-item>
-          <mdb-nav-item href="/login"><i class="fas fa-sign-in-alt"></i> Login</mdb-nav-item>
+          <router-link :to="{ name : 'register'}"><i class="fas fa-user"></i> Register</router-link>
+          <router-link :to="{ name : 'login'}"><i class="fas fa-sign-in-alt"></i> Login</router-link>
         </template>
       </mdb-navbar-nav>
     </mdb-navbar-toggler>
