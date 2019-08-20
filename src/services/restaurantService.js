@@ -14,8 +14,7 @@ export const restaurantService = {
     methods: {
         getAllRestaurants() {        
             return this.$http.get(`appdata/${config.appKey}/restaurants`)
-             .then(({data}) => {console.log(data) 
-                this.restaurants = data})
+             .then(({data}) => this.restaurants = data)
         },
         detailsRestaurant(restaurant_id) {       
             return this.$http.get(`appdata/${config.appKey}/restaurants/${restaurant_id}`)

@@ -54,7 +54,7 @@ export default {
     methods: {
         onRegisterClick() {
             this.register(this.username, this.password)
-            .then(res => this.$router.push('/login'));
+            .then(res => this.$router.push('/'));
         }
     },
     components: {
