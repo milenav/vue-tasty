@@ -40,7 +40,7 @@ export default new Router({
       component: DetailsRestaurant
     },
     {
-      path: '/restaurant/edit/:id',
+      path: '/restaurants/edit/:id',
       name: 'editRestaurant',
       component: EditRestaurant
     },

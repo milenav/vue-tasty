@@ -14,7 +14,7 @@
           </mdb-view>
           <mdb-card-body class="pb-0">
             <h6 class="font-weight-bold my-3"><mdb-icon icon="utensils" class="left"/> {{restaurant.title}}</h6>
-            <p class="grey-text">{{restaurant.description.slice(0,17)}} ...</p>
+            <p class="grey-text">{{restaurant.description}}</p>
             <router-link :to="{name: 'detailsRestaurant', params: {id: restaurant._id}}"> 
             <mdb-btn class="mb-5" color="indigo" size="sm"><mdb-icon icon="utensils" class="left"/> View</mdb-btn>
           </router-link> 

@@ -4,13 +4,13 @@
       <mdb-row class="d-flex justify-content-center">
         <mdb-col class="col-md-6">
           <form @submit.prevent="onEditClick">
-            <mdb-input v-model="restaurant.image" type="text" label="ImageUrl" readonly="readonly" />
+            <mdb-input v-model="restaurant.image" type="text"  />
             <p class="small text-danger" >Your username is not valid!</p>
 
-            <mdb-input v-model="restaurant.title" type="text" label="Title" />
+            <mdb-input v-model="restaurant.title" type="text"  />
             <p class="small text-danger" >Your password is not valid!</p>
 
-            <mdb-input v-model="restaurant.description" type="textarea" label="Description" :rows="1"/>
+            <mdb-input v-model="restaurant.description" type="textarea"  :rows="1"/>
             <p class="small text-danger" >Your password is not valid!</p>
 
             <mdb-btn color="pink" type="submit">Edit</mdb-btn>
@@ -35,7 +35,7 @@ export default {
     mixins: [restaurantService],
         methods: {
         onEditClick() {
-            this.editRestaurant(this.restaurant)
+            this.editRestaurant(this.$route.params.id, this.image, this.title, this.description)
              .then(res => this.$router.push('/'));
         }
     },
