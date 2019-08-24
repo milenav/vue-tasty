@@ -1,6 +1,6 @@
 <template>
   <!-- Footer -->
-  <mdb-footer color="indigo" class="font-small pt-0 fixed-bottom">
+  <mdb-footer color="indigo" class="font-small pt-0 fixed-bottom mt-5">
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid>
         &copy; 2019 Copyright: Milena Valcheva 

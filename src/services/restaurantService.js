@@ -23,10 +23,14 @@ export const restaurantService = {
         createRestaurant(image, title, description) {
             return this.$http.post(`appdata/${config.appKey}/restaurants`, image, title, description)
         },
-        editRestaurant(restaurant_id, image, title, description) {
+        editRestaurant(image, title, description, restaurant_id) {
             return this.$http.put(`appdata/${config.appKey}/restaurants/${restaurant_id}`, image, title, description)
             //.then(({data}) => this.editDetails = data)
-            .then(({data}) => console.log(data))
+            .then(({data}) => this.restaurantDetails = data)
+        },
+        deleteRestaurant(restaurant_id) {
+            return this.$http.delete(`appdata/${config.appKey}/restaurants/${restaurant_id}`)
+             .then(({data}) => this.restaurantDetails = data)
         }
     },
     created() {

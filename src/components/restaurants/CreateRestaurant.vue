@@ -5,14 +5,8 @@
         <mdb-col class="col-md-6">
           <form @submit.prevent="onCreateClick">
             <mdb-input v-model="restaurant.image" type="text" label="ImageUrl" />
-            <p class="small text-danger" >Your username is not valid!</p>
-
             <mdb-input v-model="restaurant.title" type="text" label="Title" />
-            <p class="small text-danger" >Your password is not valid!</p>
-
             <mdb-input v-model="restaurant.description" type="textarea" label="Description" :rows="1"/>
-            <p class="small text-danger" >Your password is not valid!</p>
-
             <mdb-btn color="pink" type="submit">Create</mdb-btn>
           </form>
         </mdb-col>
@@ -23,7 +17,6 @@
 
 <script>
 import { restaurantService } from '@/services/restaurantService'
-import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 import { mdbContainer, mdbRow, mdbCol, mdbBtn, mdbIcon, mdbInput, mdbTextarea, mdbCard, mdbCardBody } from "mdbvue";
 
 export default {
@@ -33,11 +26,11 @@ export default {
         }
     },
     mixins: [restaurantService],
-        methods: {
-        onCreateClick() {
-            this.createRestaurant(this.restaurant)
-             .then(res => this.$router.push('/'));
-        }
+    methods: {
+    onCreateClick() {
+        this.createRestaurant(this.restaurant)
+         .then(res => this.$router.push('/'));
+      }
     },
     components: {
         mdbContainer,
