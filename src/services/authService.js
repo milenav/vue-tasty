@@ -34,15 +34,16 @@ export const authenticate = {
         login(username,password) {
            return this.authenticate(`/user/${config.appKey}/login`, username, password)
         },
-        authenticate(url,username,password, headers) {
+        authenticate(url,username,password) {
             return this.$http.post(url, {
                 username,
                 password,
            },
             {
-               headers:{
+                headers:{
             'Authorization': `Basic ${authString}`,
-            'Content-Type': 'application/json'}
+            'Content-Type': 'application/json'
+                }
             }
            ).then(({data}) => loginUser({
             username: data.username,
@@ -55,7 +56,7 @@ export const authenticate = {
             )
         }
     },
-         created() {
-            this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
-     }
+    //      created() {
+    //         this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
+    //  }
 }
