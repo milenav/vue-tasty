@@ -1,53 +1,25 @@
 <template>
-  <mdb-container>
-    <mdb-row>
-      <mdb-col md="12">
-        <mdb-card reverse>
-          <mdb-view hover cascade>
-            <img :src="restaurantDetails.image" class="img-fluid" />
-            <mdb-mask overlay="white-slight" class="waves-light" />
-          </mdb-view>
-          <mdb-card-body class="text-center cascade">
-            <h2 class="font-weight-bold">
-              {{restaurantDetails.title}}
-            </h2>
-            <p>Written by
-              <a>
-                <strong>Abby Madison</strong>
-              </a>, 21/08/2018</p>
-            <mdb-btn class="btn-fb waves-light">
-              <mdb-icon fab icon="facebook" class="pr-2"/>
-              Facebook
-            </mdb-btn>
-            <span class="counter">87</span>
-            <mdb-btn class="btn-tw waves-light">
-              <mdb-icon fab icon="twitter" class="pr-2"/>
-              Twitter
-            </mdb-btn>
-            <span class="counter">73</span>
-            <mdb-btn class="btn-gplus waves-light">
-              <mdb-icon fab icon="google-plus" class="pr-2"/>
-              Google
-            </mdb-btn>
-            <span class="counter">91</span>
-            <mdb-btn color="default" class="waves-light">
-              <mdb-icon fab icon="comments" class="pr-2"/>
-              Comments
-            </mdb-btn>
-            <span class="counter">67</span>
-          </mdb-card-body>
-        </mdb-card>
-        <mdb-container class="mt-5">
-          <p>{{restaurantDetails.description}}</p>
-        </mdb-container>
-      </mdb-col>
-    </mdb-row>
-  </mdb-container>
+<mdb-container>
+	<mdb-card wide>
+		<mdb-view hover cascade>
+				<mdb-card-image :src="restaurantDetails.image" alt="Card image cap"></mdb-card-image>
+				<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
+		</mdb-view>
+		<mdb-card-body class="text-center pb-0" cascade>
+			<mdb-card-title><strong>{{restaurantDetails.title}}</strong></mdb-card-title>
+			<h5 class="blue-text"><strong>Graffiti Artist</strong></h5>
+			<mdb-card-text>{{restaurantDetails.description}}</mdb-card-text>
+			<a class="icons-sm li-ic"><mdb-icon fab icon="linkedin" /></a>
+			<a class="icons-sm tw-ic"><mdb-icon fab icon="twitter" /></a>
+			<a class="icons-sm fb-ic"><mdb-icon fab icon="facebook" /></a>
+		</mdb-card-body>
+	</mdb-card>
+</mdb-container>
 </template>
 
 <script>
 import { restaurantService } from '@/services/restaurantService'
-import { mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardBody, mdbMask, mdbIcon, mdbView, mdbBtn } from 'mdbvue';
+import { mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardBody, mdbMask, mdbIcon, mdbBtn, mdbView, mdbCardImage, mdbCardTitle, mdbCardText } from 'mdbvue';
 
 export default {
     mixins: [restaurantService],
@@ -63,7 +35,10 @@ export default {
       mdbMask,
       mdbIcon,
       mdbView,
-      mdbBtn
+      mdbBtn,
+  		mdbCardImage,
+			mdbCardTitle,
+			mdbCardText,
     }
 }
 </script>
