@@ -7,10 +7,7 @@ export default {
     install(Vue, options){
         Vue.prototype.$http = axios.create({
             baseURL: 'https://baas.kinvey.com',
-            headers: {
-                'Authorization': `Basic ${authString}`,
-                'Content-Type': 'application/json'
-            }
+            headers: {}
         });
     }
 }

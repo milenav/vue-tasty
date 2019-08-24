@@ -34,11 +34,17 @@ export const authenticate = {
         login(username,password) {
            return this.authenticate(`/user/${config.appKey}/login`, username, password)
         },
-        authenticate(url,username,password) {
+        authenticate(url,username,password, headers) {
             return this.$http.post(url, {
                 username,
-                password
-           }).then(({data}) => loginUser({
+                password,
+           },
+            {
+               headers:{
+            'Authorization': `Basic ${authString}`,
+            'Content-Type': 'application/json'}
+            }
+           ).then(({data}) => loginUser({
             username: data.username,
             authtoken: data._kmd.authtoken
             }));

@@ -26,13 +26,13 @@
     </mdb-row>
       <mdb-card class="mt-2">
     <mdb-card-body>
-      This is some text within a panel body.<mdb-icon icon="plus-square" class="d-flex justify-content-end" />
+      This is some text within a panel body.<mdb-icon icon="plus-square" class="d-flex justify-content-end pink-text mr-2" size="lg"  />
     </mdb-card-body>
   </mdb-card>
       <mdb-card class="mt-2 mb-5">
     <mdb-card-body>
       This is some text within a panel body.    
-      <mdb-icon icon="plus-square" class="d-flex justify-content-end" />
+    <mdb-icon icon="plus-square" class="d-flex justify-content-end text-pink pink-text mr-2" size="lg"  />
     </mdb-card-body>
   </mdb-card>
   <div class="d-flex justify-content-center mb-5">

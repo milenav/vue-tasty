@@ -1,7 +1,7 @@
 <template>
   <mdb-container>
     <section class="text-center my-5"  v-if="isAuth">
-      <h2 class="h1-responsive font-weight-bold my-5">Our best projects</h2>
+      <h2 class="h1-responsive font-weight-bold my-5">Еxtremely tasty food</h2>
       <p class="grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit est laborum.</p>
       <mdb-row class="text-left">
 
@@ -13,19 +13,20 @@
             </a>
           </mdb-view>
           <mdb-card-body class="pb-0">
-            <h6 class="font-weight-bold my-3"><mdb-icon icon="utensils" class="left"/> {{restaurant.title}}</h6>
+            <h6 class="font-weight-bold mb-2"><mdb-icon icon="utensils" class="left"/> {{restaurant.title}}</h6>
             <p class="grey-text fluid">{{restaurant.description}}</p>
             <router-link :to="{name: 'detailsRestaurant', params: {id: restaurant._id}}"> 
-            <mdb-btn class="mb-5" color="indigo" size="sm"><mdb-icon icon="utensils" class="left"/> View</mdb-btn>
+            <mdb-btn class="mb-2" color="indigo" size="sm"><mdb-icon icon="utensils" class="left"/> View</mdb-btn>
           </router-link> 
           </mdb-card-body>
         </mdb-col>
       </mdb-row>
     </section>
- <div v-else class="mt-5">
+
+    <div v-else class="mt-5">
        <mdb-row class="page row">
        <mdb-col md="6" xs="12" class="half-page column animated fadeInLeft">
-        <h1 class="heading display-4">Material Design for Bootstrap</h1>
+        <h1 class="heading display-4">Еxtremely tasty food</h1>
         <h2 class="subheading font-weight-bold">World's most popular framework for building responsive, mobile-first websites and apps</h2>
         <mdb-btn rounded icon="caret-right" icon-right color="lily">get started</mdb-btn>
       </mdb-col> 
@@ -37,7 +38,7 @@
       </mdb-col>
     </mdb-row>
 
-  </div>
+    </div>
   </mdb-container>
 
 </template>
