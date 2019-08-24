@@ -47,9 +47,9 @@ export default {
     onLoginClick() {
       this.login(this.username, this.password)
       .then(user => {
-        this.$root.$emit('sign-in', user.authtoken)
+        this.$root.$emit('logged-in', user.authtoken)
         this.$router.push('/')
-        });
+      });
     }
   },
   components: {

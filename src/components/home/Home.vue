@@ -45,15 +45,15 @@
 
 
 <script>
+import { authenticate } from '@/services/authService'
 import { restaurantService } from '@/services/restaurantService'
 import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, ViewWrapper, mdbBtn, mdbIcon, mdbParallax } from 'mdbvue';
 
 export default {
-  mixins: [restaurantService],
+  mixins: [restaurantService, authenticate],
   created() {
     this.getAllRestaurants()
   },
-
   components: {
     mdbContainer,
     mdbRow,

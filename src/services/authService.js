@@ -1,10 +1,10 @@
 import config from '@/config/config'
 
-const authString = btoa(`${config.appKey}:${config.appSecret}`);
+const authString = btoa(`${config.appKey}:${config.appSecret}`)
 
-const loginUser = user => {
-    localStorage.setItem('username', user.username);
-    localStorage.setItem('authtoken', user.authtoken);
+const loginUser = (user) => {
+    localStorage.setItem('authtoken', user.authtoken)
+    localStorage.setItem('username', user.username)
 
     return user;
 }
@@ -21,29 +21,31 @@ export const authServ = {
         }
     },
     created() {
-        this.$root.$on('sign-in', authtoken => this.authtoken = authtoken)
+        this.$root.$on('logged-in', authtoken => this.authtoken = authtoken)
+        this.$root.$on('logged-out', () => this.authtoken = null)
     }
 }
 
 export const authenticate = {
     methods: {
-        register(username, password) {
-            return this.authenticate(`/user/${config.appKey}`, username, password);
+        register(username, email,  password) {
+            return this.authenticate(`/user/${config.appKey}/`, username, email, password)
         },
-         login(username, password) {
-             return this.authenticate(`/user/${config.appKey}/login`, username, password);
-         },
-         logout(username, authtoken) {
-            return this.authenticate(`/user/${config.appKey}/_logout`, username, authtoken);
-         },
-        authenticate(url, username, password) {
+        login(username,password) {
+           return this.authenticate(`/user/${config.appKey}/login`, username, password)
+        },
+        authenticate(url,username,password) {
             return this.$http.post(url, {
                 username,
                 password
-             }).then(({data}) => loginUser({
-                 username: data.username,
-                 authtoken: data._kmd.authtoken
-             }));
+           }).then(({data}) => loginUser({
+            username: data.username,
+            authtoken: data._kmd.authtoken
+            }));
+        },
+        logout() {
+            return this.$http.post(`/user/${config.appKey}/_logout`
+            )
         }
     },
     created() {

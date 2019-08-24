@@ -17,7 +17,7 @@
     </mdb-container>
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid>
-        &copy; 2018 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+        &copy; 2019 Copyright: Milena Valcheva 
       </mdb-container>
     </div>
   </mdb-footer>

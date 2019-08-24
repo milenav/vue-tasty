@@ -53,8 +53,11 @@ export default {
     },
     methods: {
         onRegisterClick() {
-            this.register(this.username, this.password)
-            .then(res => this.$router.push('/'));
+            this.register(this.username, this.email, this.password)
+            .then(user => {
+                this.$root.$emit('logged-in', user.authtoken)
+                this.$router.push('/')
+            });
         }
     },
     components: {
