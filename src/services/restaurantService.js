@@ -1,7 +1,5 @@
 import config from '@/config/config'
 
-
-const authString = btoa(`${config.appKey}:${config.appSecret}`);
 const getAuthToken = () => localStorage.getItem('authtoken')
 
 export const restaurantService = {
@@ -25,13 +23,12 @@ export const restaurantService = {
         },
         editRestaurant(image, title, description, restaurant_id) {
             return this.$http.put(`appdata/${config.appKey}/restaurants/${restaurant_id}`, image, title, description)
-            //.then(({data}) => this.editDetails = data)
-            .then(({data}) => this.restaurantDetails = data)
+            .then(({data}) => this.editDetails = data)
         },
         deleteRestaurant(restaurant_id) {
             return this.$http.delete(`appdata/${config.appKey}/restaurants/${restaurant_id}`)
-             .then(({data}) => this.restaurantDetails = data)
-        }
+            .then(() => this.$router.push('/'))
+        },
     },
     created() {
         this.$http.defaults.headers['Authorization'] = `Kinvey ${getAuthToken()}`

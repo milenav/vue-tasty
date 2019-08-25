@@ -1,7 +1,9 @@
 import config from '@/config/config'
 
 const authString = btoa(`${config.appKey}:${config.appSecret}`)
+
 const getAuthToken = () => localStorage.getItem('authtoken')
+
 const loginUser = (user) => {
     localStorage.setItem('authtoken', user.authtoken)
     localStorage.setItem('username', user.username)
@@ -52,11 +54,8 @@ export const authenticate = {
         },
         logout() {
             this.$http.defaults.headers.post['Authorization'] = `Kinvey ${getAuthToken}`
-            return this.$http.post(`/user/${config.appKey}/_logout`
-             ).then(() => this.$router.push('/'))
+            return this.$http.post(`/user/${config.appKey}/_logout`)
+            .then(() => this.$router.push('/'))
         }
     },
-    //      created() {
-    //         this.$http.defaults.headers.post['Authorization'] = `Basic ${authString}`
-    //  }
 }

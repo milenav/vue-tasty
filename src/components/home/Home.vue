@@ -4,7 +4,14 @@
       <h2 class="h1-responsive font-weight-bold my-5">Еxtremely tasty food</h2>
       
 
- -->
+    <!-- <div class="input-group md-form form-sm form-2 pl-0 mb-5">
+      <input class="form-control my-0 py-3 lime-border" type="text" placeholder="Search" aria-label="Search">
+      <div class="input-group-append">
+        <span class="input-group-text pink" id="basic-text1">
+          <mdbIcon icon="search" class="text-white p-3"/>
+        </span>
+      </div>
+    </div> -->
 
       
       <mdb-row class="text-left">
@@ -41,7 +48,6 @@
         </mdb-view>
       </mdb-col>
     </mdb-row>
-
     </div>
   </mdb-container>
 

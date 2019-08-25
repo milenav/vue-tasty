@@ -37,9 +37,9 @@
   </mdb-card>
   <div class="d-flex justify-content-center mb-5">
   <router-link :to="{name: 'editRestaurant'}"> 
-    <mdb-btn color="pink">Edit</mdb-btn>
+    <mdb-btn @click="onEdit" color="pink">Edit</mdb-btn>
   </router-link>
-    <mdb-btn color="pink">Delete</mdb-btn>
+    <mdb-btn @click="onDelete" color="pink">Delete</mdb-btn>
   </div>
 </mdb-container>
 
@@ -54,6 +54,15 @@ export default {
     mixins: [restaurantService],
     created() {
         this.detailsRestaurant(this.$route.params.id)      
+    },
+    methods: {
+      onDelete() {
+        this.deleteRestaurant(this.$route.params.id)
+      },
+      onEdit() {
+        this.detailsRestaurant(this.$route.params.id)
+        
+      }
     },
     components: {
       mdbContainer,
