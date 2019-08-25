@@ -2,7 +2,18 @@
   <mdb-container>
     <section class="text-center my-5"  v-if="isAuth">
       <h2 class="h1-responsive font-weight-bold my-5">Еxtremely tasty food</h2>
-      <p class="grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit est laborum.</p>
+      
+<template>
+    <div class="input-group md-form form-sm form-2 pl-0 mb-5">
+      <input class="form-control my-0 py-3 lime-border" type="text" placeholder="Search" aria-label="Search">
+      <div class="input-group-append">
+        <span class="input-group-text pink" id="basic-text1">
+          <mdbIcon icon="search" class="text-white p-3"/>
+        </span>
+      </div>
+    </div>
+</template>
+      
       <mdb-row class="text-left">
 
         <mdb-col lg="3" md="12" class="mb-lg-0 mb-4" v-for="restaurant in restaurants" :key="restaurant._id">
@@ -48,7 +59,7 @@
 <script>
 import { authenticate } from '@/services/authService'
 import { restaurantService } from '@/services/restaurantService'
-import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, ViewWrapper, mdbBtn, mdbIcon, mdbParallax } from 'mdbvue';
+import { mdbContainer, mdbRow, mdbCol, mdbView, mdbMask, mdbCard, mdbCardBody, ViewWrapper, mdbBtn, mdbInput, mdbIcon, mdbParallax } from 'mdbvue';
 
 export default {
   mixins: [restaurantService, authenticate],
@@ -66,7 +77,8 @@ export default {
     mdbCard,
     mdbCardBody,
     mdbBtn,
-    mdbIcon
+    mdbIcon,
+    mdbInput
   }
 }
 </script>

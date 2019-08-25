@@ -1,13 +1,14 @@
 <template>
-  <!-- Footer -->
-  <mdb-footer color="indigo" class="font-small pt-0 fixed-bottom">
-    <div class="footer-copyright text-center py-3">
-      <mdb-container fluid>
-        &copy; 2019 Copyright: Milena Valcheva 
-      </mdb-container>
-    </div>
-  </mdb-footer>
-  <!-- Footer -->
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright: Milena Valcheva
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </template>   
 
 <script>
@@ -23,6 +24,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+footer.page-footer {
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+z-index:9999999;
+}
 </style>
