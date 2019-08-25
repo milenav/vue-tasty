@@ -14,8 +14,8 @@ The users receive an access to this section after a successful login. It contain
 
 Kinvey is the back-end service used for this project
 
-Project setup
+Project setup:
 npm install
 
-Compiles and hot-reloads for development
+Compiles and hot-reloads for development:
 npm run serve

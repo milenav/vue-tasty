@@ -9,6 +9,12 @@ export const restaurantService = {
           restaurantDetails: {},
         }
     },
+    computed: {
+        edit() {
+            this.$root.$on('edit-details', (data) => 
+            this.detailsRestaurant(this.$route.params.id) == data)
+        }
+    },
     methods: {
         getAllRestaurants() {        
             return this.$http.get(`appdata/${config.appKey}/restaurants`)
@@ -26,6 +32,7 @@ export const restaurantService = {
             .then(({data}) => this.editDetails = data)
         },
         deleteRestaurant(restaurant_id) {
+            this.$http.defaults.headers['Authorization'] = `Kinvey ${getAuthToken()}`
             return this.$http.delete(`appdata/${config.appKey}/restaurants/${restaurant_id}`)
             .then(() => this.$router.push('/'))
         },

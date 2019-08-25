@@ -51,6 +51,11 @@ import { restaurantService } from '@/services/restaurantService'
 import { mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardBody, mdbMask, mdbIcon, mdbBtn, mdbView, mdbCardImage, mdbCardTitle, mdbCardText } from 'mdbvue';
 
 export default {
+  data() {
+    return {
+      restaurant: {}
+    }
+  },
     mixins: [restaurantService],
     created() {
         this.detailsRestaurant(this.$route.params.id)      
@@ -61,7 +66,11 @@ export default {
       },
       onEdit() {
         this.detailsRestaurant(this.$route.params.id)
-        
+        .then((data) => {
+          console.log(data)
+
+          this.$root.$emit('edit-details')
+        })
       }
     },
     components: {
