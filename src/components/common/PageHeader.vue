@@ -9,7 +9,7 @@
         <template v-if="isAuth">
           <mdb-nav-item><router-link class="text-white" tag="a" to="/restaurant/create"><i class="fas fa-plus-circle"></i> Create</router-link></mdb-nav-item>
           <!-- <router-link :to="{ name : ''}"><i class="fas fa-smile"></i> Profile</router-link> -->
-          <router-link to="#"> 
+          <router-link to="/"> 
           <mdb-nav-item class="text-white" @click.prevent="onLogout"><i class="fas fa-sign-out-alt"></i> Logout</mdb-nav-item>
           </router-link>
         </template>

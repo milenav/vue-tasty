@@ -3,16 +3,9 @@
     <section class="text-center my-5"  v-if="isAuth">
       <h2 class="h1-responsive font-weight-bold my-5">Еxtremely tasty food</h2>
       
-<template>
-    <div class="input-group md-form form-sm form-2 pl-0 mb-5">
-      <input class="form-control my-0 py-3 lime-border" type="text" placeholder="Search" aria-label="Search">
-      <div class="input-group-append">
-        <span class="input-group-text pink" id="basic-text1">
-          <mdbIcon icon="search" class="text-white p-3"/>
-        </span>
-      </div>
-    </div>
-</template>
+
+ -->
+
       
       <mdb-row class="text-left">
 
@@ -39,11 +32,11 @@
        <mdb-col md="6" xs="12" class="half-page column animated fadeInLeft">
         <h1 class="heading display-4">Еxtremely tasty food</h1>
         <h2 class="subheading font-weight-bold">World's most popular framework for building responsive, mobile-first websites and apps</h2>
-        <mdb-btn rounded icon="caret-right" icon-right color="lily">get started</mdb-btn>
+        <mdb-btn rounded icon="caret-right" icon-right class="ripe-malinka-gradient color-block-5 mb-3 mx-auto z-depth-1-half">view more</mdb-btn>
       </mdb-col> 
       <mdb-col class="column" md="6" xs="12">
         <mdb-view>
-        <img class="image animated fadeInDown" src="https://www.pngarts.com/files/3/Food-PNG-Transparent-Image.png" >
+        <img class="image animated fadeInDown" src="https://uploads-ssl.webflow.com/59288f1c25e231517d69659d/5b6aaaef945eff0a4b7d8623_Flying-Pizza-2.png" >
         <mdb-mask flex-center class="hm-gradient" />
         </mdb-view>
       </mdb-col>
@@ -138,9 +131,9 @@ export default {
       font-size: 1.5rem;
     }
 
-    .btn-lily {
+    /* .btn-lily {
       background: linear-gradient(40deg, rgba(0,51,199,.7), rgba(209,149,249,.7));
-    }
+    } */
 
     .image {
       width: 100%;

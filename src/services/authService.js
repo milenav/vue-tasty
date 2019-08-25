@@ -53,7 +53,7 @@ export const authenticate = {
         logout() {
             this.$http.defaults.headers.post['Authorization'] = `Kinvey ${getAuthToken}`
             return this.$http.post(`/user/${config.appKey}/_logout`
-            ).then(() => this.$router.push('/'))
+             ).then(() => this.$router.push('/'))
         }
     },
     //      created() {
